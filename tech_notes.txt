@@ -1,0 +1,18 @@
+#2. How @Config annotations are used in the framework with examples.
+
+Ans: @Config annotation is used to perform action if any action is triggered i.e _new,_get,_save etc.
+     And this action basically identifies which type of logic should be applied to a give domain entity(testexample).  
+	
+     For example :
+	
+     @Config(url="/p/testexample/_new")
+     @Button(type = Button.Type.PLAIN)
+     private String cancel;
+	
+     Here, /p denotes start of param path and testexample is the domain entity.
+	
+     In the above sample code snippet, the action is _new. This states that we should perform the instructions defined for _new on the 
+     param located at /paramPath/domainentity. So when the CANCEL button is clicked, the control will be navigated to the specified url, 
+     where _new creates a new instance for the model.
+     The above process is controlled by @Config annotaions for _new action.
+	
